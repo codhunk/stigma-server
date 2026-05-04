@@ -1,6 +1,8 @@
 const dotenv = require("dotenv");
-// Load env vars as early as possible
-dotenv.config();
+const path = require("path");
+
+// Load env vars from root directory
+dotenv.config({ path: path.join(__dirname, "../.env") });
 
 const dns = require("dns");
 const connectDB = require("./config/database");
